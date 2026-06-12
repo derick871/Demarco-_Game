@@ -39,8 +39,34 @@ def get_diffuculty():
             return 4
         else:
             print("Invalid choice,Try again")
-        
+print("level selections")
 
+def give_hint(number):
+    print("\n===hint===")
+    if number % 2:
+        print("Is even number")
+    else:
+        print("Is an odd number")
+    if number % 9:
+        print("Divisible by 9")
+    elif number % 7:
+        print("Divisible by 7")
+    else:
+        print("Not divisible by both 9 and 7")
+        
+print("==================")
+print("===Demarco Game===")
+print("==================")
+
+username=input("Enter your name")
+secret_allowed=get_diffuculty()
+secret_numbers= random.randint(1,100)
+
+attempts_used= 0
+wrong_guesses= 0
+win= False
+
+while attempts_used < attempts_allowed:
 
 
 leaderboard()
