@@ -23,8 +23,12 @@ def leaderboard():
     for position, (name, score) in enumerate(scores[:10], start=1):
         print(f"{position}. {name} - {score} points")
 
-# Example
-save_score("Derrick", 90)
-save_score("Brian", 80)
+def get_diffuculty():
+    print("\nChoose levels")
+    print("1.Easy(7 trials)")
+    print("2.Medium(5 trials)")
+    print("3.Hard(3 trials)")
+
+
 
 leaderboard()
