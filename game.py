@@ -59,7 +59,7 @@ print("===Demarco Game===")
 print("==================")
 
 username=input("Enter your name")
-secret_allowed=get_diffuculty()
+attempts_allowed=get_diffuculty()
 secret_numbers= random.randint(1,100)
 
 attempts_used= 0
@@ -67,6 +67,13 @@ wrong_guesses= 0
 win= False
 
 while attempts_used < attempts_allowed:
+    try:
+        guess= int(input("\n Enter your numbers(1-100):"))
+        if guess >100:
+            print("Out of range")
+    except ValueError:
+        print("enter a valid value")
+        continue
 
 
 leaderboard()
