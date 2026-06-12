@@ -74,6 +74,35 @@ while attempts_used < attempts_allowed:
     except ValueError:
         print("enter a valid value")
         continue
+    
+    attempts_used += 1
+    remaining = attempts_allowed - attempts_used
 
+    if guess == secret_numbers:
+        print(f"\n🎉 Congratulations {username}!")
+        print(f"You guessed the number in {attempts_used} attempts.")
+
+        score = (attempts_allowed - attempts_used + 1) * 10
+        print(f"Your score: {score}")
+
+        save_score(username, score)
+        won = True
+        break
+
+    elif guess > secret_numbers:
+        print("Too High!")
+    else:
+        print("Too Low!")
+
+    wrong_guesses += 1
+
+    if wrong_guesses == 3:
+        give_hint("secret_number")
+
+    print(f"Remaining guesses: {remaining}")
+
+if not won:
+    print("\n❌ Game Over!")
+    print(f"The correct number was {secret_numbers}.")
 
 leaderboard()
