@@ -27,7 +27,19 @@ def get_diffuculty():
     print("\nChoose levels")
     print("1.Easy(7 trials)")
     print("2.Medium(5 trials)")
-    print("3.Hard(3 trials)")
+    print("3.Hard(4 trials)")
+
+    while True:
+        choice=input("choose your level")
+        if choice =="1":
+          return 7
+        elif choice =="2":
+            return 5
+        elif choice =="3":
+            return 4
+        else:
+            print("Invalid choice,Try again")
+        
 
 
 
