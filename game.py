@@ -116,9 +116,9 @@ def show_leaderboard():
 def get_difficulty():
 
     print("\nChoose Difficulty")
-    print("1. Easy (7 tries)")
-    print("2. Medium (5 tries)")
-    print("3. Hard (4 tries)")
+    print("1. Easy (10 tries)")
+    print("2. Medium (7 tries)")
+    print("3. Hard (5 tries)")
 
     while True:
 
