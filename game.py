@@ -1,9 +1,22 @@
 import os
 import random
+import sqlite3
+import pandas as pd
+DB_NAME=" game.db"
+EXCEL_NAME= "Leaderboard.xlsl"
+
+def init_db():
+    conn = sqlite3.connect(DB_NAME)
+    cursor = conn.cursor()
+    curser.execute()
+    curser.commit()
+    curser.close()
 
 def save_score(username, score):
     with open("highScores.txt", "a") as file:
         file.write(f"{username},{score}\n")
+    conn = sqlite3.connect(DB_NAME)
+    cursor = conn.cursor()
 
 def leaderboard():
     print("\n===== LEADERBOARD =====")
@@ -58,9 +71,18 @@ print("==================")
 print("===Demarco Game===")
 print("==================")
 
-username=input("Enter your name")
-attempts_allowed=get_diffuculty()
-secret_numbers= random.randint(1,100)
+username = input("\nEnter your name: ").strip()
+
+    # Admin Control Handlers
+    if username.lower() == 'export':
+        export_to_excel()
+    elif username.lower() == 'sync':
+        sync_from_excel()
+        leaderboard()
+    else:
+        # Standard Game Loop
+        attempts_allowed = get_difficulty()
+        secret_number = random.randint(1, 100)
 
 attempts_used= 0
 wrong_guesses= 0
