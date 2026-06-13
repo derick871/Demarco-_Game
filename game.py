@@ -70,7 +70,7 @@ def export_to_excel():
 
     df.to_excel(EXCEL_NAME, index=False)
 
-    print(f"\n📊 Data exported to '{EXCEL_NAME}'")
+    print(f"\n Data exported to '{EXCEL_NAME}'")
 
 
 def save_score(username, score):
@@ -141,16 +141,16 @@ def give_hint(number):
     print("\n===== HINT =====")
 
     if number % 2 == 0:
-        print("💡 The number is EVEN")
+        print(" The number is EVEN")
     else:
-        print("💡 The number is ODD")
+        print(" The number is ODD")
 
     if number % 9 == 0:
-        print("💡 Divisible by 9")
+        print(" Divisible by 9")
     elif number % 7 == 0:
-        print("💡 Divisible by 7")
+        print(" Divisible by 7")
     else:
-        print("💡 Not divisible by 7 or 9")
+        print(" Not divisible by 7 or 9")
 
     print("================")
 
@@ -182,11 +182,11 @@ def play_game():
             guess = int(input("\nEnter your guess (1-100): "))
 
             if guess < 1 or guess > 100:
-                print("⚠️ Number must be between 1 and 100.")
+                print(" Number must be between 1 and 100.")
                 continue
 
         except ValueError:
-            print("⚠️ Please enter a valid integer.")
+            print(" Please enter a valid integer.")
             continue
 
         attempts_used += 1
@@ -196,7 +196,7 @@ def play_game():
 
             score = (attempts_allowed - attempts_used + 1) * 10
 
-            print(f"\n🎉 Congratulations {username}!")
+            print(f"\n Congratulations {username}!")
             print(f"Difficulty: {difficulty_name}")
             print(f"Attempts Used: {attempts_used}")
             print(f"Score: {score}")
@@ -207,10 +207,10 @@ def play_game():
             break
 
         elif guess > secret_number:
-            print("📉 Too High!")
+            print(" Too High!")
 
         else:
-            print("📈 Too Low!")
+            print(" Too Low!")
 
         wrong_guesses += 1
 
@@ -221,7 +221,7 @@ def play_game():
 
     if not won:
 
-        print("\n❌ Game Over!")
+        print("\n Game Over!")
         print(f"The correct number was {secret_number}")
 
         save_score(username, 0)
